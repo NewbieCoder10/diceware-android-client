@@ -36,7 +36,7 @@ public interface DicewareService {
   Completable delete(@Header("Authorization") String token, @Path("id") long id);
 
   @PUT("passphrases/{id}")
-  void put(@Header("Authorization") String token, @Path("id") long id, @Body Passphrase passphrase);
+  Single<Passphrase> put(@Header("Authorization") String token, @Path("id") long id, @Body Passphrase passphrase);
 
   @POST("passphrases/")
   Single<Passphrase> post(@Header("Authorization") String token, @Body Passphrase passphrase);
